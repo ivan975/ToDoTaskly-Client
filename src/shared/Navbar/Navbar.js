@@ -16,7 +16,7 @@ const Navbar = () => {
                             <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Add Task</Link>
                         </li>
                         <li className="flex">
-                            <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">My Task</Link>
+                            <Link to="/myTask" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">My Task</Link>
                         </li>
                         <li className="flex">
                             <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Completed Task</Link>

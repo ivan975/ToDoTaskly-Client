@@ -21,7 +21,7 @@ const TaskInput = () => {
                 <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm">
                     <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                         <div className="col-span-full sm:col-span-3">
-                            <label for="firstname" className="text-2xl font-bold">My Task</label>
+                            <label className="text-2xl font-bold">My Task</label>
                             <input
                                 id="task"
                                 type="text"
