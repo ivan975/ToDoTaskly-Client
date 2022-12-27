@@ -1,9 +1,10 @@
 import React from 'react';
+import TaskInput from '../TaskInput/TaskInput';
 
 const Home = () => {
     return (
         <div>
-            <h1>ivan</h1>
+            <TaskInput />
         </div>
     );
 };
