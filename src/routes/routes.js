@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
+import AddTask from "../pages/AddTask/AddTask";
 import Home from "../pages/Home/Home/Home";
+import Media from "../pages/Media/Media";
 import MyTask from "../pages/MyTask/MyTask";
 
 export const router = createBrowserRouter([
@@ -15,6 +17,14 @@ export const router = createBrowserRouter([
             {
                 path: '/myTask',
                 element: <MyTask />
+            },
+            {
+                path: '/addTask',
+                element: <AddTask />
+            },
+            {
+                path: 'media',
+                element: <Media />
             }
         ]
     }

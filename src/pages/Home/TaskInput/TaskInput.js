@@ -1,17 +1,16 @@
-import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const TaskInput = () => {
 
-    const [message, setMessage] = useState('');
+    const [name, setName] = useState('');
 
     const handleEvent = (event) => {
-        setMessage(event.target.value);
+        setName(event.target.value);
     }
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            const tasks = { message: message }
+            const tasks = { name: name }
             event.preventDefault();
             fetch('http://localhost:5000/tasks', {
                 method: 'POST',
@@ -41,7 +40,7 @@ const TaskInput = () => {
                                 type="text"
                                 name="task"
                                 placeholder="Task"
-                                value={message}
+                                value={name}
                                 onChange={handleEvent}
                                 className="w-full border-b focus:outline-none border-gray-500 text-gray-900" />
                         </div>

@@ -13,7 +13,7 @@ const Navbar = () => {
                     </Link>
                     <ul className="items-stretch hidden space-x-3 md:flex">
                         <li className="flex">
-                            <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Add Task</Link>
+                            <Link to="/addTask" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Add Task</Link>
                         </li>
                         <li className="flex">
                             <Link to="/myTask" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">My Task</Link>
