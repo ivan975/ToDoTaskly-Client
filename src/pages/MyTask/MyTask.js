@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
+
 const MyTask = () => {
 
     const { data: items = [] } = useQuery({
@@ -21,17 +22,22 @@ const MyTask = () => {
                         <tr>
                             <th title="Number" className="p-3">#</th>
                             <th title="Task name" className="p-3">Name</th>
+                            <th title="Task name" className="p-3">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className=''>
                         {
                             items.map((item, i) =>
-                                <tr key={item.i} className="border-b dark:border-gray-700 dark:bg-gray-800">
+                                <tr key={item.i} className="border-b border-black">
                                     <td className="px-3 py-2">
                                         <span>{i + 1}</span>
                                     </td>
                                     <td className="px-3 py-2">
                                         <span>{item.name}</span>
+                                    </td>
+                                    <td className="px-3 py-2">
+                                        <button type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100 mr-2">Delete</button>
+                                        <button type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100">Update</button>
                                     </td>
                                 </tr>
                             )
