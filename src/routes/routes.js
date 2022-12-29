@@ -3,8 +3,10 @@ import Main from "../layout/Main";
 import AddTask from "../pages/AddTask/AddTask";
 import CompletedTask from "../pages/CompletedTask/CompletedTask";
 import Home from "../pages/Home/Home/Home";
+import Login from "../pages/Login/Login";
 import Media from "../pages/Media/Media";
 import MyTask from "../pages/MyTask/MyTask";
+import SignUp from "../pages/SignUp/SignUp";
 import UpdateTasks from "../pages/UpdateTasks/UpdateTasks";
 import ErrorPage from "../shared/ErrorPage/ErrorPage";
 
@@ -38,6 +40,14 @@ export const router = createBrowserRouter([
                 path: '/tasks/edit/:id',
                 element: <UpdateTasks />
             },
+            {
+                path: '/login',
+                element: <Login />
+            },
+            {
+                path: '/signup',
+                element: <SignUp />
+            }
         ]
     }
 ])

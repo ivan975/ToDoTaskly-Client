@@ -4,20 +4,15 @@ import logo from '../../assets/logo.png';
 
 const Navbar = () => {
 
-    const navbarItems =
-        <>
-            <Link to="/" aria-label="Back to homepage" className="flex items-center p-2">
-                <img className='w-11 mr-2' src={logo} alt="" />
-                <p className='text-xl font-bold'>ToDoTaskly</p>
-            </Link>
-        </>
-
     return (
         <div>
             <header className="p-2 bg-teal-400 text-black">
                 <div className="container flex justify-between h-16 mx-auto">
                     <Link to="/" aria-label="Back to homepage" className="flex items-center p-2">
-                        {navbarItems}
+                        <Link to="/" aria-label="Back to homepage" className="flex items-center p-2">
+                            <img className='w-11 mr-2' src={logo} alt="" />
+                            <p className='text-xl font-bold'>ToDoTaskly</p>
+                        </Link>
                     </Link>
                     <ul className="items-stretch hidden space-x-3 md:flex">
                         <li className="flex">
@@ -30,10 +25,10 @@ const Navbar = () => {
                             <Link to="/completed" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Completed Task</Link>
                         </li>
                         <li className="flex">
-                            <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Sign Up</Link>
+                            <Link to="/signup" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Sign Up</Link>
                         </li>
                         <li className="flex">
-                            <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Sign In</Link>
+                            <Link to="/login" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Sign In</Link>
                         </li>
                         <li className="flex">
                             <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Log Out</Link>
