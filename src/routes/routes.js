@@ -4,6 +4,7 @@ import AddTask from "../pages/AddTask/AddTask";
 import Home from "../pages/Home/Home/Home";
 import Media from "../pages/Media/Media";
 import MyTask from "../pages/MyTask/MyTask";
+import UpdateTasks from "../pages/UpdateTasks/UpdateTasks";
 import ErrorPage from "../shared/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -27,7 +28,11 @@ export const router = createBrowserRouter([
             {
                 path: 'media',
                 element: <Media />
-            }
+            },
+            {
+                path: '/tasks/edit/:id',
+                element: <UpdateTasks />
+            },
         ]
     }
 ])

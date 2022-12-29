@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const MyTask = () => {
@@ -33,6 +34,10 @@ const MyTask = () => {
                 })
         }
     }
+    const navigate = useNavigate();
+    const handleUpdate = (id) => {
+        navigate(`/tasks/edit/${id}`)
+    }
 
     return (
         <div className="container p-2 mx-auto rounded-md sm:p-4 dark:text-gray-100 dark:bg-gray-900">
@@ -58,7 +63,7 @@ const MyTask = () => {
                                     </td>
                                     <td className="px-3 py-2">
                                         <button onClick={() => handleDelete(item._id)} type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100 mr-2">Delete</button>
-                                        <button type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100">Update</button>
+                                        <button onClick={() => handleUpdate(item._id)} type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100">Update</button>
                                     </td>
                                 </tr>
                             )
