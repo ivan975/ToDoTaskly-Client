@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-
-const MyTask = () => {
-
+const CompletedTask = () => {
     const [tasks, setTasks] = useState();
 
     const { data: items = [], refetch } = useQuery({
@@ -35,11 +33,8 @@ const MyTask = () => {
         }
     }
     const navigate = useNavigate();
-    const handleUpdate = (id) => {
-        navigate(`/tasks/edit/${id}`)
-    }
-    const handleCompleted = (id) => {
-        navigate('/completed')
+    const handleNotCompleted = () => {
+        navigate('/myTask')
     }
 
     return (
@@ -66,8 +61,7 @@ const MyTask = () => {
                                     </td>
                                     <td className="px-3 py-2">
                                         <button onClick={() => handleDelete(item._id)} type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100 mr-2">Delete</button>
-                                        <button onClick={() => handleUpdate(item._id)} type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100 mr-2">Update</button>
-                                        <button onClick={() => handleCompleted()} type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100 mr-2">Completed</button>
+                                        <button onClick={() => handleNotCompleted()} type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100 mr-2">Not Completed</button>
                                     </td>
                                 </tr>
                             )
@@ -79,4 +73,4 @@ const MyTask = () => {
     );
 };
 
-export default MyTask;
+export default CompletedTask;

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import AddTask from "../pages/AddTask/AddTask";
+import CompletedTask from "../pages/CompletedTask/CompletedTask";
 import Home from "../pages/Home/Home/Home";
 import Media from "../pages/Media/Media";
 import MyTask from "../pages/MyTask/MyTask";
@@ -26,8 +27,12 @@ export const router = createBrowserRouter([
                 element: <AddTask />
             },
             {
-                path: 'media',
+                path: '/media',
                 element: <Media />
+            },
+            {
+                path: '/completed',
+                element: <CompletedTask />
             },
             {
                 path: '/tasks/edit/:id',

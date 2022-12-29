@@ -10,7 +10,7 @@ const ErrorPage = () => {
                 <img src={not_found} alt="" />
                 <p className="text-red-600">something went wrong!!!</p>
                 <p className="text-3xl text-red-500">{error.message || error.statusText}</p>
-                <Link to="/" className="px-8 py-3 font-semibold rounded dark:bg-purple-400 dark:text-gray-900">Back to homepage</Link>
+                <Link to="/" className="px-8 py-3 font-semibold rounded bg-purple-400 dark:text-gray-900">Back to homepage</Link>
             </div>
         </section>
     );
