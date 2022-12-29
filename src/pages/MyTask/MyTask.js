@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
 
 
 const MyTask = () => {
 
-    const { data: items = [] } = useQuery({
+    const [tasks, setTasks] = useState();
+
+    const { data: items = [], refetch } = useQuery({
         queryKey: ['items'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/tasks')
@@ -12,6 +15,24 @@ const MyTask = () => {
             return data;
         }
     });
+
+    const handleDelete = id => {
+        const proceed = window.confirm(`Are you sure you want to delete the buyer?`);
+        if (proceed) {
+            fetch(`http://localhost:5000/tasks/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        toast.error('Task Deleted')
+                        const remaining = tasks.filter(t => t._id !== id)
+                        setTasks(remaining);
+                        refetch();
+                    }
+                })
+        }
+    }
 
     return (
         <div className="container p-2 mx-auto rounded-md sm:p-4 dark:text-gray-100 dark:bg-gray-900">
@@ -36,7 +57,7 @@ const MyTask = () => {
                                         <span>{item.name}</span>
                                     </td>
                                     <td className="px-3 py-2">
-                                        <button type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100 mr-2">Delete</button>
+                                        <button onClick={() => handleDelete(item._id)} type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100 mr-2">Delete</button>
                                         <button type="button" className="px-3 py-2 font-semibold rounded-full bg-orange-600 text-gray-100">Update</button>
                                     </td>
                                 </tr>
